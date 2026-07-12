@@ -1,0 +1,12 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            DELETE FROM sdk_releases\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": []
+  },
+  "hash": "020aec546ad11c095fc5c8fff0795e2ac5fec09556e92e6f41ca943eb923a909"
+}

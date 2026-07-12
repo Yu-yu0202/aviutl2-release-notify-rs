@@ -1,0 +1,50 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            SELECT * FROM sdk_releases ORDER BY release_date DESC LIMIT 1\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "sdk_releases",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "release_date",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "sdk_releases",
+            "name": "release_date"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "changelog",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "sdk_releases",
+            "name": "changelog"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false,
+      true
+    ]
+  },
+  "hash": "a630d1b10129e53ea65bdc470c87aa2ec4e66d34edab6ea56a37855a421db55b"
+}

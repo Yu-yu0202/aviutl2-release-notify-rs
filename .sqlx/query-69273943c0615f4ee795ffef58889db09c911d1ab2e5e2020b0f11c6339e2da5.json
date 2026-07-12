@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            DELETE FROM aviutl2_releases WHERE version = $1\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "69273943c0615f4ee795ffef58889db09c911d1ab2e5e2020b0f11c6339e2da5"
+}

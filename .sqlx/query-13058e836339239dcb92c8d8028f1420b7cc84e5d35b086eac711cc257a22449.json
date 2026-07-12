@@ -1,0 +1,98 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            SELECT * FROM aviutl2_releases ORDER BY release_date DESC LIMIT 1\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "aviutl2_releases",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "version",
+        "type_info": "Varchar",
+        "origin": {
+          "Table": {
+            "table": "aviutl2_releases",
+            "name": "version"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "zip_url",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "aviutl2_releases",
+            "name": "zip_url"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "exe_url",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "aviutl2_releases",
+            "name": "exe_url"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "release_date",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "aviutl2_releases",
+            "name": "release_date"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "aviutl2_changelog",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "aviutl2_releases",
+            "name": "aviutl2_changelog"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "lua_changelog",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "aviutl2_releases",
+            "name": "lua_changelog"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true
+    ]
+  },
+  "hash": "13058e836339239dcb92c8d8028f1420b7cc84e5d35b086eac711cc257a22449"
+}

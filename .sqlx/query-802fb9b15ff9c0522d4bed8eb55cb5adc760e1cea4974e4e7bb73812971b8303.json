@@ -1,0 +1,20 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            INSERT INTO aviutl2_releases (id, version, zip_url, exe_url, release_date, aviutl2_changelog, lua_changelog)\n            VALUES ($1, $2, $3, $4, $5, $6, $7)\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Varchar",
+        "Text",
+        "Text",
+        "Timestamptz",
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "802fb9b15ff9c0522d4bed8eb55cb5adc760e1cea4974e4e7bb73812971b8303"
+}

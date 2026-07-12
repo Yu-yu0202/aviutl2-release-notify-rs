@@ -1,0 +1,9 @@
+services:
+  aviutl2-release-notify-rs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/yu-yu0202/aviutl2-release-notify-rs:latest
+    restart: unless-stopped
+    env_file:
+      - .env
