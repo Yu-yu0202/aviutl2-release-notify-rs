@@ -21,6 +21,12 @@ RUN --mount=type=bind,source=src,target=src \
 
 FROM debian:trixie-slim AS runtime
 
-COPY --from=build /bin/server /bin/
+RUN apt-get update && \
+    apt-get install -y ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY --from=build --chown=65534:65534 /bin/server /bin/
+
+USER 65534:65534
 
 CMD ["/bin/server"]

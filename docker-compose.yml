@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: ghcr.io/yu-yu0202/aviutl2-release-notify-rs:latest
+    container_name: aviutl2-release-notify-rs
     restart: unless-stopped
     env_file:
       - .env
