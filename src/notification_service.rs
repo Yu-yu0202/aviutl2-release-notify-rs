@@ -4,6 +4,7 @@ use crate::scraper::release::aviutl2::AVIUTL2_RELEASE_URL;
 use anyhow::*;
 use quicord_rs::builder::button::ButtonBuilder;
 use quicord_rs::core::interaction::{ContainerBuilder, TextDisplayBuilder};
+use quicord_rs::log::warn;
 use sqlx::PgPool;
 use std::sync::{Arc, OnceLock};
 use twilight_http::Client as HttpClient;
@@ -38,18 +39,34 @@ impl NotificationService {
         let channels = Registration::get_all(&self.db).await?;
         for channel in channels {
             if let Some(container) = create_aviutl2_container(release) {
-                self.http
+                let res = self
+                    .http
                     .create_message(channel.channel_id.parse()?)
                     .flags(MessageFlags::IS_COMPONENTS_V2)
                     .components(&[container])
-                    .await?;
+                    .await;
+
+                if let Err(e) = res {
+                    warn!(
+                        "Error sending message in channel {}: {:?}",
+                        channel.channel_id, e
+                    );
+                }
             }
             if let Some(container) = create_sdk_container(release) {
-                self.http
+                let res = self
+                    .http
                     .create_message(channel.channel_id.parse()?)
                     .flags(MessageFlags::IS_COMPONENTS_V2)
                     .components(&[container])
-                    .await?;
+                    .await;
+
+                if let Err(e) = res {
+                    warn!(
+                        "Error sending message in channel {}: {:?}",
+                        channel.channel_id, e
+                    );
+                }
             }
         }
 
